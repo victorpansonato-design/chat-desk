@@ -1,0 +1,232 @@
+[
+  {
+    "id": "S01",
+    "file": "S01-portal-inicio-compacto.webp",
+    "original": "image(20261109-201813).png",
+    "description": "Início compacto, recente, CTA e navegação.",
+    "crop": [
+      1560,
+      315,
+      1907,
+      910
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S02",
+    "file": "S02-portal-inicio-expandido.webp",
+    "original": "image(20261109-201829).png",
+    "description": "Mesmo início em painel expandido.",
+    "crop": [
+      1230,
+      15,
+      1906,
+      838
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S03",
+    "file": "S03-portal-mensagens-expandido.webp",
+    "original": "image(20261109-201837).png",
+    "description": "Lista de atendimentos, status e datas.",
+    "crop": [
+      1230,
+      12,
+      1907,
+      835
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S04",
+    "file": "S04-portal-mensagens-compacto.webp",
+    "original": "image(20261109-201843).png",
+    "description": "Lista compacta e ação de nova conversa.",
+    "crop": [
+      1562,
+      315,
+      1906,
+      832
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S05",
+    "file": "S05-portal-encerrada-compacta.webp",
+    "original": "image(20261109-201856).png",
+    "description": "Conversa encerrada, somente leitura e nova conversa.",
+    "crop": [
+      1562,
+      328,
+      1907,
+      844
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S06",
+    "file": "S06-portal-humano-avaliacao.webp",
+    "original": "image(20261109-201901).png",
+    "description": "Histórico: transferência, humano, escala 0–10 e encerramento.",
+    "crop": [
+      1230,
+      15,
+      1907,
+      844
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S07",
+    "file": "S07-portal-historico-expandido.webp",
+    "original": "image(20261109-201917).png",
+    "description": "Drawer sobre conversa selecionada.",
+    "crop": [
+      1230,
+      15,
+      1907,
+      845
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S08",
+    "file": "S08-portal-historico-compacto.webp",
+    "original": "image(20261109-201925).png",
+    "description": "Drawer no painel compacto.",
+    "crop": [
+      1562,
+      324,
+      1907,
+      842
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S09",
+    "file": "S09-portal-nova-compacta.webp",
+    "original": "image(20261109-201934).png",
+    "description": "Conversa vazia e composer.",
+    "crop": [
+      1562,
+      324,
+      1907,
+      839
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S10",
+    "file": "S10-portal-nova-expandida.webp",
+    "original": "image(20261109-201940).png",
+    "description": "Conversa vazia expandida.",
+    "crop": [
+      1230,
+      10,
+      1907,
+      834
+    ],
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S11",
+    "file": "S11-tira-duvidas-escuro.webp",
+    "original": "image(20261109-202002).png",
+    "description": "Página embutida escura, sugestões e trocar tipo de dúvida.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S12",
+    "file": "S12-app-historico.webp",
+    "original": "image(20261109-202224).png",
+    "description": "Histórico sobreposto no app, tema escuro.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S13",
+    "file": "S13-app-permissao-microfone.webp",
+    "original": "image(20261109-202240).png",
+    "description": "Permissão nativa iOS; não comprova gravação/transcrição.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S14",
+    "file": "S14-app-teclado.webp",
+    "original": "image(20261109-202246).png",
+    "description": "Composer com teclado aberto.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S15",
+    "file": "S15-app-historico-duplicata.webp",
+    "original": "image(20261109-202255).png",
+    "description": "Segundo registro do drawer; variante equivalente.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S16",
+    "file": "S16-app-teclado-duplicata.webp",
+    "original": "image(20261109-202300).png",
+    "description": "Segundo registro do teclado; variante equivalente.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S17",
+    "file": "S17-app-seletor-anexo.webp",
+    "original": "image(20261109-202312).png",
+    "description": "Opções nativas de fotos/câmera/arquivo.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S18",
+    "file": "S18-app-mensagens.webp",
+    "original": "image(20261109-202324).png",
+    "description": "Lista, status encerrado, datas e navegação.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S19",
+    "file": "S19-app-encerrada-avaliacao.webp",
+    "original": "image(20261109-202332).png",
+    "description": "Escala 0–10, conteúdo e encerramento.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  },
+  {
+    "id": "S20",
+    "file": "S20-app-inicio.webp",
+    "original": "image(20261109-202342).png",
+    "description": "Saudação, recente e ação de mensagem.",
+    "crop": null,
+    "status": "OBSERVADO_PRINT",
+    "date": "2026-11-09"
+  }
+]

@@ -1,0 +1,245 @@
+{
+  "note": "Manifesto exclui seu próprio arquivo para evitar hash autorreferente.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 106,
+      "sha256": "1f4a9f6a83f8aaa58d6a965bcae4143fcd9130a8ef590a4ae052dc5881255068"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2335,
+      "sha256": "168fa8bca9d034474737ec8b0c7cec22e916d2491b63029aa04335c48a7f9a32"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 704,
+      "sha256": "585480aa8663d63247170c9df5b52cddae05b95248ea7d5b255b6a284bf3bec2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4160,
+      "sha256": "b07ea2057ec425c8cf6a4a8635ff070ef03e4ce82a46f6917c23aa882fbeaa3c"
+    },
+    {
+      "path": "docs/01-produto.md",
+      "bytes": 3228,
+      "sha256": "e648c7e99ad589ba499fb089cf1110b35a38a26695af7250788568a5ab3e09b1"
+    },
+    {
+      "path": "docs/02-inventario.md",
+      "bytes": 4769,
+      "sha256": "b0f4d3487845a7924652b11347c4373f53dbb10555f0f4adb21ed375f8c17444"
+    },
+    {
+      "path": "docs/03-inspecao.md",
+      "bytes": 3869,
+      "sha256": "af348201a3ae7d538a7422ffe0d05cca8f399d593ec348e71ef8957d7c2d4574"
+    },
+    {
+      "path": "docs/04-experiencia.md",
+      "bytes": 4414,
+      "sha256": "1b261923a2b657f684b7a0c3db053d513c40088ce1c93d5cd1f4a23991c7380a"
+    },
+    {
+      "path": "docs/05-design.md",
+      "bytes": 4798,
+      "sha256": "c54c70c522b86d3e755617497cc5230191d1c144d599cf846e240a1e7a199853"
+    },
+    {
+      "path": "docs/06-movimento.md",
+      "bytes": 3634,
+      "sha256": "79491b9ca891b3b7faf3e609c5f28ef648f997112546e2862ef9b03b1de3f5e7"
+    },
+    {
+      "path": "docs/07-acessibilidade-compatibilidade.md",
+      "bytes": 5217,
+      "sha256": "ccc6d9d952261f2f3859460c6a4ba90b40444f398f2f45ad0f5c026ed2b5f399"
+    },
+    {
+      "path": "docs/08-arquitetura.md",
+      "bytes": 3931,
+      "sha256": "93d5a4a34f0a7b54906afad4864e249bfc4b4a4c1ea2914bf7aea655c515fa12"
+    },
+    {
+      "path": "docs/09-plano-validacao.md",
+      "bytes": 5202,
+      "sha256": "4d08e3f0fe2f01f4fcc4c6e869956a85675e652cb7d3accaf82d3f89d20b3a4f"
+    },
+    {
+      "path": "docs/10-conteudo.md",
+      "bytes": 2653,
+      "sha256": "eda115dd741b3c1ae00097bce3ae5fefc0b45b374f799ec5303b8f8a87eefcd3"
+    },
+    {
+      "path": "fixtures/scenarios.json",
+      "bytes": 2659,
+      "sha256": "d2096c5573719b820f064890c173898d7d5f3215660440f41dcddc686cbe9ce4"
+    },
+    {
+      "path": "prompt.md",
+      "bytes": 7812,
+      "sha256": "d925559236a8041f5b964f0b0eff217942c30068c3045bf2a09aaeca1a8c85a7"
+    },
+    {
+      "path": "references/README.md",
+      "bytes": 3317,
+      "sha256": "22f655919caca6657206c2c318d5d1723d65c5317f294080cb2f9fb03c13f3dc"
+    },
+    {
+      "path": "references/current/INDEX.md",
+      "bytes": 3890,
+      "sha256": "43fd4b5def01d3a7e07863815a50358243b8619daa62428f14ed7a4be0b4e67c"
+    },
+    {
+      "path": "references/current/S01-portal-inicio-compacto.webp",
+      "bytes": 14000,
+      "sha256": "d12891f68d1ed9b641177aa483ce9fe3050c56373ab9716f978e4099282687cc"
+    },
+    {
+      "path": "references/current/S02-portal-inicio-expandido.webp",
+      "bytes": 13256,
+      "sha256": "a0f6fb80194e520855d022fc6520ba214c897f84403743b0cf42b706a21a0d8b"
+    },
+    {
+      "path": "references/current/S03-portal-mensagens-expandido.webp",
+      "bytes": 27178,
+      "sha256": "850ded3999a19c6efe53fcbd11d4f9c4a77bc09112c9b4b66561d16100f4fd61"
+    },
+    {
+      "path": "references/current/S04-portal-mensagens-compacto.webp",
+      "bytes": 17514,
+      "sha256": "63703647c4c59e1a5ce641ace62fd8c0b5704fc5ab364fccec12e98b05576d01"
+    },
+    {
+      "path": "references/current/S05-portal-encerrada-compacta.webp",
+      "bytes": 23752,
+      "sha256": "0e2d3a938269b20c52add6e0459a6bdfc10959e6de25188c390d14adc05386e3"
+    },
+    {
+      "path": "references/current/S06-portal-humano-avaliacao.webp",
+      "bytes": 46470,
+      "sha256": "b10d467d9f2245fec25d89d9b460eadcd4694d9b8284ea9766f1fbe3f72ee10c"
+    },
+    {
+      "path": "references/current/S07-portal-historico-expandido.webp",
+      "bytes": 34228,
+      "sha256": "5a01c360dfe5049d135f41b4d792ba4e6028adb36200fde8f0af48a5f1f127a7"
+    },
+    {
+      "path": "references/current/S08-portal-historico-compacto.webp",
+      "bytes": 15124,
+      "sha256": "9af21a137b8ae67781a76ebf228ad3ef9b4fac202e0602562b9a9d78d351d98d"
+    },
+    {
+      "path": "references/current/S09-portal-nova-compacta.webp",
+      "bytes": 11136,
+      "sha256": "c11b178a6bbfb3b047a8720fe075cfc3f30e267c0df3e1ea947446378c7ca2a4"
+    },
+    {
+      "path": "references/current/S10-portal-nova-expandida.webp",
+      "bytes": 11034,
+      "sha256": "3bfa2a79038a54cf36bec6e2091d27ed54f78dc774e0d051bdc3474a4a25033f"
+    },
+    {
+      "path": "references/current/S11-tira-duvidas-escuro.webp",
+      "bytes": 31874,
+      "sha256": "a9e5b6a07c3512db1dc166a8d38e890e44731783629b2bef7573498032978e9c"
+    },
+    {
+      "path": "references/current/S12-app-historico.webp",
+      "bytes": 50182,
+      "sha256": "3a1b3e414c5a577d8348fc637d99b899771dfb45e0796a52f351b933fb88fc23"
+    },
+    {
+      "path": "references/current/S13-app-permissao-microfone.webp",
+      "bytes": 42074,
+      "sha256": "b01a9a838bdb50a2a9f59eecda8883cfcc077c2ef7d50e44d94e129c6057f091"
+    },
+    {
+      "path": "references/current/S14-app-teclado.webp",
+      "bytes": 45240,
+      "sha256": "d50cccee4504eb4c5f5e6d14954ec253def6f4011f420ab0b1d91d0794c07602"
+    },
+    {
+      "path": "references/current/S15-app-historico-duplicata.webp",
+      "bytes": 50182,
+      "sha256": "3a1b3e414c5a577d8348fc637d99b899771dfb45e0796a52f351b933fb88fc23"
+    },
+    {
+      "path": "references/current/S16-app-teclado-duplicata.webp",
+      "bytes": 45240,
+      "sha256": "d50cccee4504eb4c5f5e6d14954ec253def6f4011f420ab0b1d91d0794c07602"
+    },
+    {
+      "path": "references/current/S17-app-seletor-anexo.webp",
+      "bytes": 38886,
+      "sha256": "c0e4f53c063e0006feb9416ce296df6087b1470cd5c5a2e4bbdf44f432f37b52"
+    },
+    {
+      "path": "references/current/S18-app-mensagens.webp",
+      "bytes": 58510,
+      "sha256": "b9db1501a5444d00e689ad4e127fd8e6d6ceb8984ba83e3b3dd31b7e83786ed1"
+    },
+    {
+      "path": "references/current/S19-app-encerrada-avaliacao.webp",
+      "bytes": 93276,
+      "sha256": "165c75efbbc1ed9a62e113a90a6ea3ca63e46992b0d313754a03b95d1b2748f4"
+    },
+    {
+      "path": "references/current/S20-app-inicio.webp",
+      "bytes": 38394,
+      "sha256": "ecb4673a3face8cb032e5d2a2a5e43b9cc6d9b65597f8a6907ea8b571280a3e4"
+    },
+    {
+      "path": "references/current/manifest.json",
+      "bytes": 5653,
+      "sha256": "4b755a78a0cb6b3a74bd7e1511dd58be47a9285dcfe7f9484f7e38003037ddf8"
+    },
+    {
+      "path": "references/products/chatgpt-inicio.webp",
+      "bytes": 26768,
+      "sha256": "ebea5f01e1d4bac1529cc2be84f0bddc79e3df56225cad4167ac99bac362b017"
+    },
+    {
+      "path": "references/products/intercom-entrada-direta.webp",
+      "bytes": 90698,
+      "sha256": "57567d6e57e8553a3878d77a2fd8c87cbf237db968b6820a1a5f89aecb3dc425"
+    },
+    {
+      "path": "references/products/intercom-leitura-compacto-expandido.webp",
+      "bytes": 130598,
+      "sha256": "f61cfea47a5c45354741c95a8eeddcf5cc5d68db758e17e84c478727b50ad792"
+    },
+    {
+      "path": "references/videos/README.md",
+      "bytes": 1830,
+      "sha256": "b55950e52b8fed701ede4f35035b9c73f809dcff0d1046b65b4e8d4dbeb3a4b6"
+    },
+    {
+      "path": "references/videos/claude-demo.url",
+      "bytes": 67,
+      "sha256": "761b9e2fe4ed268a0170b5976c5835507cceb1e16fb60b898a33625e9e4883f4"
+    },
+    {
+      "path": "research/fontes.md",
+      "bytes": 2780,
+      "sha256": "ee7cb4d7444ff1ed9e560e02179454162093f02ba1bca5efbbdb270161925dda"
+    },
+    {
+      "path": "templates/decisoes.md",
+      "bytes": 766,
+      "sha256": "80f67c4694fd123e9091943dd523d1d06d4e7332d4d7eb86eae68067e3694b5a"
+    },
+    {
+      "path": "templates/descoberta.md",
+      "bytes": 826,
+      "sha256": "d91e5cc3a6a14c2bda6885097a7bbf33521adcb5df458a1e9a9b146bdf9673b9"
+    },
+    {
+      "path": "templates/validacao.md",
+      "bytes": 793,
+      "sha256": "fa6f237690c61c1aa1ece3bd31ce1cd289a91e7c686bc92da0fdee57fa08c134"
+    }
+  ]
+}

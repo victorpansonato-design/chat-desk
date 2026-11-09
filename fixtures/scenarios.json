@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Catálogo de cenários de demonstração; não é contrato real de API.",
+  "dataPolicy": "Somente dados fictícios; nenhuma integração ativa.",
+  "student": {
+    "id": "demo-student",
+    "displayName": "Estudante"
+  },
+  "agent": {
+    "id": "demo-agent",
+    "displayName": "Ana",
+    "role": "Equipe de atendimento",
+    "fictional": true
+  },
+  "scenarios": [
+    {
+      "id": "inicio",
+      "title": "Início com conversa recente",
+      "evidence": "observado",
+      "implemented": false
+    },
+    {
+      "id": "historico",
+      "title": "Lista e drawer com conversa selecionada",
+      "evidence": "observado",
+      "implemented": false
+    },
+    {
+      "id": "ia-texto",
+      "title": "Pergunta e resposta institucional fictícia",
+      "evidence": "proposto_sobre_texto_observado",
+      "implemented": false
+    },
+    {
+      "id": "envio-falha",
+      "title": "Falha e reenvio sem duplicação",
+      "evidence": "proposto",
+      "implemented": false
+    },
+    {
+      "id": "resposta-atrasada",
+      "title": "Resposta da conversa A com B selecionada",
+      "evidence": "proposto",
+      "implemented": false
+    },
+    {
+      "id": "anexo",
+      "title": "Seleção, preview, cancelamento e falha",
+      "evidence": "parcial_observado",
+      "implemented": false
+    },
+    {
+      "id": "audio-negado",
+      "title": "Permissão negada e alternativa texto",
+      "evidence": "parcial_observado",
+      "implemented": false
+    },
+    {
+      "id": "audio-local",
+      "title": "Gravação, revisão e cancelamento locais",
+      "evidence": "proposto",
+      "implemented": false
+    },
+    {
+      "id": "humano-espera",
+      "title": "Pedido, aceitação e espera sem posição/tempo",
+      "evidence": "proposto_sobre_transferencia_observada",
+      "implemented": false
+    },
+    {
+      "id": "humano-ativo",
+      "title": "Pessoa fictícia assume o mesmo histórico",
+      "evidence": "observado_em_historico",
+      "implemented": false
+    },
+    {
+      "id": "humano-indisponivel",
+      "title": "Rota temporariamente indisponível",
+      "evidence": "proposto",
+      "implemented": false
+    },
+    {
+      "id": "avaliacao",
+      "title": "Escala 0–10, resposta e erro",
+      "evidence": "parcial_observado",
+      "implemented": false
+    },
+    {
+      "id": "encerrada",
+      "title": "Somente leitura e nova conversa",
+      "evidence": "observado",
+      "implemented": false
+    },
+    {
+      "id": "sessao-indisponivel",
+      "title": "Falha de sessão sem operação real",
+      "evidence": "proposto",
+      "implemented": false
+    }
+  ]
+}
