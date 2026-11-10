@@ -98,3 +98,16 @@ Substitui os resultados acima: a interface foi refeita e os testes de navegador,
 **Não medido:** fluidez das transições (não há medição de quadros; avaliação só visual por capturas estáticas), desempenho em aparelho de entrada, e a transformação entre interfaces com CPU limitada. A transformação anima largura e altura (causa reflow a cada quadro): aceitável no desktop ensaiado, a verificar em aparelhos modestos.
 
 **Defeitos da rodada 1 corrigidos (auditoria do núcleo):** indicador "escrevendo" preso ao ir para a fila; encaminhamento duplicado por clique duplo; encerramento desfeito por encaminhamento tardio; criações paralelas da conversa no primeiro envio; microfone que gravava mesmo após cancelar a permissão; URLs locais não liberadas; contagem de "novas mensagens" vazando entre conversas; conversa vazia órfã no histórico; citação perdida em envio só com anexos; falta de mapeamento do ID local para o ID do servidor.
+# Validação de publicação · 10/11/2026
+
+OBSERVADO nesta rodada:
+
+- Node.js 24.15.0; build com Vite 7.3.8 concluído.
+- `npm run check`: tipos válidos, 22 testes unitários aprovados, 26 pares de contraste acima dos mínimos definidos e zero vulnerabilidades no `npm audit`.
+- `npx playwright test`: 23/23 cenários aprovados sobre o build de produção servido em `127.0.0.1:5174`.
+- Uma falha inicial de arrasto foi isolada: o teste agia antes de a gaveta terminar sua saída. A espera agora observa a remoção do diálogo; o caso passou três vezes seguidas e na suíte completa.
+- Interação adicional por agent-browser: envio de pergunta fictícia, resposta e troca de hospedeiro preservando a conversa.
+- Nenhuma chamada a serviço acadêmico ou backend real adicionada. Vídeo de referência local preservado e ignorado pelo Git e pelo upload da Vercel.
+
+Limites: contraste verifica os pares enumerados no script, não constitui auditoria WCAG completa. Chromium/Chrome em desktop e viewport móvel não certificam WebViews, leitores de tela ou dispositivos reais. CI remoto e URL publicada devem ser verificados separadamente.
+

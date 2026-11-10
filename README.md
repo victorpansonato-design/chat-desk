@@ -2,14 +2,20 @@
 
 Pacote de descoberta e direção para reformular **a experiência do aluno** no Chat Anchieta. Preparado em 09/11/2026 para implementação no VS Code com Claude Code e Codex.
 
-**Este repositório começa como briefing executável. Não contém o novo aplicativo.** Não houve acesso autenticado ao chat nem reprodução ao vivo dos seus fluxos. As evidências atuais são os 20 prints fornecidos pelo responsável de CX. Prints não provam animações, regras de negócio ou entrega de mensagens.
+**Este repositório contém o protótipo React + TypeScript + Vite e o briefing de descoberta.** OBSERVADO: a base inicial reúne 20 prints e o registro de inspeção curta em [templates/descoberta.md](templates/descoberta.md). A paridade continua parcial; prints não provam animações, regras de negócio ou entrega de mensagens.
+
+## Publicação de demonstração
+
+RELATADO: em 10/11/2026, Victor solicitou organizar este repositório no GitHub e fazer deploy na Vercel, autorizando a publicação após a primeira rodada local. O escopo continua sendo um protótipo com dados fictícios e atendimento simulado.
+
+Configuração versionada: Node.js 24 (`.nvmrc`), instalação `npm ci`, build `npm run build`, saída `dist` e framework Vite. A branch de produção é `main`. Veja [docs/deploy.md](docs/deploy.md) para validação, publicação e recuperação.
 
 ## Protótipo local (rodada 2 · 10/11/2026)
 
 Protótipo funcional com **dados fictícios e nenhuma integração real**. A rodada 2 refez toda a interface: uma tela só, um único chat que se transforma entre as três interfaces, tema claro por padrão (escuro opcional), fonte Inter. A paridade com o legado continua **parcial**, baseada em prints, textos enviados por CX e numa inspeção curta.
 
 ```bash
-npm install
+npm ci               # Node.js 24
 npm run dev          # http://127.0.0.1:5173
 ```
 
@@ -32,7 +38,8 @@ Foto da Ana: salve o arquivo em `src/assets/ana.png` e ela substitui o símbolo 
 |---|---|
 | Tipos | `npm run typecheck` |
 | Lógica (Vitest) | `npm test` |
-| Navegador (Playwright + Chrome instalado) | `npx playwright test` |
+| Navegador sobre o build de produção (Chrome instalado) | `npm run test:e2e` |
+| Tipos, lógica, contraste e auditoria de dependências | `npm run check` |
 | Contraste dos dois temas | `npm run contraste` |
 | Capturas (com o dev rodando) | `npm run capturas` |
 
@@ -45,7 +52,7 @@ Resultados, lacunas e decisões: [templates/validacao.md](templates/validacao.md
 3. Se houver acesso ao sistema atual, faça a inspeção curta de [docs/03-inspecao.md](docs/03-inspecao.md), com login realizado pelo próprio usuário.
 4. Sem acesso, o agente deve continuar com dados fictícios e registrar hipóteses. Não deve alegar paridade integral.
 
-**Comando para colar no Claude Code ou no Codex:**
+**Comando histórico da primeira rodada local (a publicação foi autorizada posteriormente):**
 
 > Leia @prompt.md e execute o projeto por etapas, respeitando @AGENTS.md. Comece pelo inventário e pelas evidências em references/current. Se eu disponibilizar o navegador autenticado, faça a inspeção curta prevista; se não, prossiga com mocks e registre as lacunas. Construa primeiro a referência funcional mínima e depois a proposta visual em um único sistema responsivo para os três canais. Verifique no navegador, rode localmente e encerre com URL, evidências e pendências. Não publique nem conecte serviços reais nesta rodada.
 

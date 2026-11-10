@@ -1,0 +1,14 @@
+.git
+.github
+node_modules
+dist
+references
+research
+captures
+templates
+test-results
+playwright-report
+src/ref_video
+*.har
+*.log
+.env*

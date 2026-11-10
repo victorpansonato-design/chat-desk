@@ -25,6 +25,13 @@
 
 Registre alterações de arquitetura de informação e funções como proposta, sem reescrever evidência histórica.
 
+## Publicação autorizada · 10/11/2026
+
+- RELATADO: Victor pediu a organização do GitHub e o deploy na Vercel, substituindo a restrição de publicação da primeira rodada.
+- PROPOSTO: publicar o mesmo protótipo estático em `main`, com Node.js 24, configuração Vercel e CI versionados. Permanecem dados fictícios e adapter mock.
+- PROPOSTO: aviso visível de atendimento simulado nos três canais e exclusão de indexação para distinguir a demonstração do atendimento oficial.
+- OBSERVADO: vídeo local em `src/ref_video/` não versionado. Foi preservado no disco e incluído no ignore; não deve ser enviado ao GitHub nem ao deploy.
+
 
 ## Rodada 2 — 10/11/2026 (redesign completo, a pedido de CX)
 

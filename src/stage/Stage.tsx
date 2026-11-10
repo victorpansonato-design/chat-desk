@@ -197,6 +197,7 @@ export function Stage({ initialHost, initialOpen, initialSize, env }: StageProps
 
   return (
     <div className="ws" data-small={small || undefined}>
+      <p className="demo-notice">Protótipo · Atendimento simulado. Use apenas dados fictícios.</p>
       <div className="ws__glow" aria-hidden="true" />
 
       <aside className="rail">

@@ -329,6 +329,8 @@ test('Aplicativo · simulador de toque: arrastar rola, a roda não rola, arrasto
   await open(page, '?view=app');
   await page.getByRole('button', { name: /Abrir conversas/ }).click();
   await page.getByRole('dialog').getByRole('button', { name: /Declaração de matrícula/ }).click();
+  // Aguarda a saída da gaveta: seu backdrop ainda intercepta o ponteiro durante a transição.
+  await expect(page.getByRole('dialog')).toHaveCount(0);
   const scroller = page.locator('.transcript__scroll');
   await expect(page.getByText('Atendimento encerrado · Somente leitura')).toBeVisible();
   const bottom = await scroller.evaluate((el) => el.scrollTop);

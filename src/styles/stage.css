@@ -5,8 +5,20 @@
   isolation: isolate;
   display: grid;
   grid-template-columns: 276px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
   height: 100dvh;
   overflow: hidden;
+}
+.demo-notice {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 8px max(12px, env(safe-area-inset-right)) 8px max(12px, env(safe-area-inset-left));
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-0);
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
 }
 .ws__glow {
   position: absolute;
@@ -692,7 +704,7 @@
 @media (max-width: 900px) {
   .ws {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
   }
   .rail {
     flex-direction: row;

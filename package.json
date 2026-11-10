@@ -2,15 +2,20 @@
   "name": "chat-desk",
   "private": true,
   "version": "0.1.0",
-  "description": "Protótipo local do Chat Anchieta (experiência do aluno) — dados fictícios, sem integração real.",
+  "description": "Protótipo do Chat Anchieta (experiência do aluno) — dados fictícios, sem integração real.",
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "vite --port 5173 --strictPort",
     "build": "tsc --noEmit -p . && vite build",
     "preview": "vite preview --port 5174",
     "typecheck": "tsc --noEmit -p .",
     "test": "vitest run",
+    "pretest:e2e": "npm run build",
     "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm test && npm run contraste && npm audit --audit-level=low",
     "contraste": "node scripts/contraste.mjs",
     "capturas": "node scripts/capturas.mjs"
   },
@@ -20,13 +25,13 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.1",
+    "@playwright/test": "^1.65.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^5.2.0",
     "jsdom": "^25.0.1",
     "typescript": "^5.6.3",
-    "vite": "^5.4.11",
-    "vitest": "^2.1.8"
+    "vite": "^7.3.8",
+    "vitest": "^4.1.12"
   }
 }
