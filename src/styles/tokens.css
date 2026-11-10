@@ -1,0 +1,480 @@
+/*
+ * Identidade "Noite Anchieta" — um único tema, escuro e azul.
+ * As cores de marca vêm do CSS público da instituição (verificado em 10/11/2026):
+ * azul #0051A0, marinho #01184A, azul vivo #003EE1, azul claro #1579DA, ouro #F1BC09.
+ * Azul = Ana (tecnologia). Ouro = pessoas do Suporte ao Aluno (tradição, calor humano).
+ */
+:root {
+  --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+
+  --anchieta-blue: #0051a0;
+  --anchieta-navy: #01184a;
+  --anchieta-sky: #1579da;
+  --anchieta-gold: #f1bc09;
+  --gold-solid: #f1bc09;
+  --brand-grad: linear-gradient(135deg, #1565c0 0%, #0051a0 60%, #00448a 100%);
+  --bubble-grad: linear-gradient(135deg, #0a5cb8 0%, #0051a0 100%);
+
+  /* Movimento: curvas sem ressalto; tudo interrompível */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-emph: cubic-bezier(0.2, 0, 0, 1);
+  --t-1: 150ms;
+  --t-2: 260ms;
+  --t-3: 400ms;
+  --t-morph: 780ms;
+}
+
+/* Tema claro (padrão): branco, azul Anchieta sóbrio, sem brilho neon */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg-0: #e9eef6;
+  --bg-1: #ffffff;
+  --bg-2: #f2f5fa;
+  --bg-3: #e6ecf5;
+  --line-rgb: 24 52 104;
+  --tint-rgb: 1 24 74;
+  --accent-rgb: 0 81 160;
+  --gold-rgb: 176 128 0;
+  --danger-rgb: 190 50 40;
+  --ok-rgb: 20 125 78;
+  --shadow-rgb: 90 110 150;
+  --scrim-rgb: 8 20 44;
+  --line: rgb(var(--line-rgb) / 0.14);
+  --line-strong: rgb(var(--line-rgb) / 0.26);
+  --text: #0b1a33;
+  --text-2: #42516c;
+  --text-3: #5f6d88;
+  --text-strong: #01184a;
+  --accent: #0051a0;
+  --accent-text: #0051a0;
+  --accent-soft: rgb(var(--accent-rgb) / 0.08);
+  --gold: #7a5a00;
+  --gold-soft: rgb(241 188 9 / 0.16);
+  --gold-line: rgb(var(--gold-rgb) / 0.5);
+  --ok: #157a4c;
+  --danger: #b3261e;
+  --danger-soft: rgb(var(--danger-rgb) / 0.07);
+  --focus: #0051a0;
+  --card: #ffffff;
+  --card-strong: #ffffff;
+  --field: #ffffff;
+  --side: #f5f7fb;
+  --bar: rgb(255 255 255 / 0.9);
+  --drawer: #ffffff;
+  --bubble-team: #fff8e1;
+  --browser: rgb(255 255 255 / 0.72);
+  --shimmer-base: #7c89a1;
+  --shimmer-peak: #01184a;
+  --stage-glow: rgb(0 81 160 / 0.13);
+  --stage-band: rgb(0 81 160 / 0.035);
+  --aurora-rest: 0;
+}
+
+/* Tema escuro: marinho profundo, mesmo azul */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-0: #050b17;
+  --bg-1: #0a1424;
+  --bg-2: #101d33;
+  --bg-3: #172742;
+  --line-rgb: 148 178 235;
+  --tint-rgb: 255 255 255;
+  --accent-rgb: 98 160 240;
+  --gold-rgb: 241 188 9;
+  --danger-rgb: 255 143 143;
+  --ok-rgb: 95 211 156;
+  --shadow-rgb: 0 0 0;
+  --scrim-rgb: 2 7 18;
+  --line: rgb(var(--line-rgb) / 0.16);
+  --line-strong: rgb(var(--line-rgb) / 0.3);
+  --text: #e8eef8;
+  --text-2: #b7c3d9;
+  --text-3: #94a2bc;
+  --text-strong: #ffffff;
+  --accent: #7fb2f5;
+  --accent-text: #a9ccf7;
+  --accent-soft: rgb(var(--accent-rgb) / 0.14);
+  --gold: #f3d06a;
+  --gold-soft: rgb(var(--gold-rgb) / 0.1);
+  --gold-line: rgb(var(--gold-rgb) / 0.4);
+  --ok: #5fd39c;
+  --danger: #ff9c9c;
+  --danger-soft: rgb(var(--danger-rgb) / 0.1);
+  --focus: #a9d0ff;
+  --card: #111f37;
+  --card-strong: #14233e;
+  --field: #070f1d;
+  --side: #070f1d;
+  --bar: rgb(10 20 36 / 0.88);
+  --drawer: #0c1729;
+  --bubble-team: #1c2333;
+  --browser: rgb(8 16 30 / 0.74);
+  --shimmer-base: #8b9bb8;
+  --shimmer-peak: #ffffff;
+  --stage-glow: rgb(0 81 160 / 0.4);
+  --stage-band: rgb(21 121 218 / 0.06);
+  --aurora-rest: 0.18;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-0);
+  color: var(--text);
+  font: 400 16px/1.55 var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ——— Primitivas de movimento (src/ui/motion.tsx) ——— */
+
+.collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--t-3) var(--ease-emph),
+    opacity var(--t-2) ease;
+}
+.collapse[data-open='true'] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.collapse__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.fade-switch {
+  transition: opacity var(--t-1) ease;
+}
+.fade-switch[data-phase='out'] {
+  opacity: 0;
+}
+.fade-switch__item {
+  animation: switch-in var(--t-2) var(--ease-out) both;
+}
+@keyframes switch-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+/* ——— Botões: arredondados, com preenchimento que entra pela esquerda ——— */
+
+.btn {
+  --fill: rgb(var(--tint-rgb) / 0.1);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color var(--t-2) ease,
+    border-color var(--t-2) ease,
+    opacity var(--t-2) ease,
+    transform var(--t-1) ease;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--fill);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--t-3) var(--ease-out);
+}
+.btn:not(:disabled):hover::before,
+.btn:not(:disabled):focus-visible::before {
+  transform: scaleX(1);
+}
+.btn:not(:disabled):active {
+  transform: scale(0.98);
+}
+.btn:disabled {
+  opacity: 0.5;
+}
+.btn--small {
+  min-height: 38px;
+  padding: 0 15px;
+  font-size: 14px;
+}
+.btn--block {
+  width: 100%;
+}
+.btn--primary {
+  --fill: rgb(255 255 255 / 0.16);
+  background: var(--brand-grad);
+  color: #fff;
+  box-shadow:
+    0 4px 12px rgb(var(--shadow-rgb) / 0.3);
+}
+.btn--soft {
+  --fill: rgb(var(--accent-rgb) / 0.16);
+  background: var(--accent-soft);
+  border-color: rgb(var(--accent-rgb) / 0.32);
+  color: var(--accent-text);
+}
+.btn--ghost {
+  --fill: rgb(var(--tint-rgb) / 0.09);
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+/* Pessoas da equipe: ouro. O preenchimento vira ouro sólido e o texto, marinho. */
+.btn--team {
+  --fill: var(--gold-solid);
+  background: var(--gold-soft);
+  border-color: var(--gold-line);
+  color: var(--gold);
+}
+.btn--team:not(:disabled):hover,
+.btn--team:not(:disabled):focus-visible {
+  color: var(--anchieta-navy);
+}
+.btn--danger {
+  --fill: var(--danger);
+  border-color: rgb(var(--danger-rgb) / 0.55);
+  color: var(--danger);
+}
+.btn--danger:not(:disabled):hover,
+.btn--danger:not(:disabled):focus-visible {
+  color: var(--bg-1);
+}
+.btn[data-chosen] {
+  opacity: 1;
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.btn__spinner {
+  width: 0;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 0.35);
+  border-top-color: #fff;
+  opacity: 0;
+  margin-right: -8px;
+  transition:
+    width var(--t-2) var(--ease-out),
+    opacity var(--t-2) ease,
+    margin var(--t-2) var(--ease-out);
+}
+.btn[data-busy] .btn__spinner {
+  width: 16px;
+  opacity: 1;
+  margin-right: 0;
+  animation: spin 800ms linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-btn {
+  position: relative;
+  isolation: isolate;
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--text-2);
+  transition:
+    color var(--t-2) ease,
+    opacity var(--t-2) ease,
+    width var(--t-3) var(--ease-emph),
+    margin var(--t-3) var(--ease-emph);
+}
+.icon-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgb(var(--tint-rgb) / 0.1);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity var(--t-2) ease,
+    transform var(--t-2) var(--ease-out);
+}
+.icon-btn:not(:disabled):hover,
+.icon-btn:not(:disabled):focus-visible {
+  color: var(--text);
+}
+.icon-btn:not(:disabled):hover::before,
+.icon-btn:not(:disabled):focus-visible::before {
+  opacity: 1;
+  transform: none;
+}
+.icon-btn:disabled {
+  opacity: 0.35;
+}
+.icon-btn--small {
+  width: 32px;
+  height: 32px;
+}
+
+.link {
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition:
+    text-decoration-color var(--t-2) ease,
+    opacity var(--t-2) ease;
+}
+.link:not(:disabled):hover,
+.link:focus-visible {
+  text-decoration-color: currentColor;
+}
+.link:disabled {
+  opacity: 0.5;
+}
+
+.tag {
+  flex: none;
+  display: inline-block;
+  padding: 3px 6px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 10.5px;
+  line-height: 1;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.tag--ai {
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  border-color: rgb(var(--accent-rgb) / 0.38);
+}
+.tag--team {
+  color: var(--gold);
+  background: var(--gold-soft);
+  border-color: var(--gold-line);
+}
+
+.badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: var(--gold-solid);
+  color: var(--anchieta-navy);
+  font-weight: 700;
+  font-size: 12px;
+}
+.badge--dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  min-width: 9px;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  box-shadow: 0 0 0 2px var(--bg-1);
+}
+
+/* ——— Movimento reduzido: sem deslocamento, só fades curtos ——— */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-property: opacity, color, background-color, border-color, box-shadow !important;
+    transition-duration: 120ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root[data-motion='reduce'] *,
+:root[data-motion='reduce'] *::before,
+:root[data-motion='reduce'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-property: opacity, color, background-color, border-color, box-shadow !important;
+  transition-duration: 120ms !important;
+  transition-delay: 0ms !important;
+  scroll-behavior: auto !important;
+}

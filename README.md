@@ -4,6 +4,40 @@ Pacote de descoberta e direção para reformular **a experiência do aluno** no 
 
 **Este repositório começa como briefing executável. Não contém o novo aplicativo.** Não houve acesso autenticado ao chat nem reprodução ao vivo dos seus fluxos. As evidências atuais são os 20 prints fornecidos pelo responsável de CX. Prints não provam animações, regras de negócio ou entrega de mensagens.
 
+## Protótipo local (rodada 2 · 10/11/2026)
+
+Protótipo funcional com **dados fictícios e nenhuma integração real**. A rodada 2 refez toda a interface: uma tela só, um único chat que se transforma entre as três interfaces, tema claro por padrão (escuro opcional), fonte Inter. A paridade com o legado continua **parcial**, baseada em prints, textos enviados por CX e numa inspeção curta.
+
+```bash
+npm install
+npm run dev          # http://127.0.0.1:5173
+```
+
+À esquerda: logotipo, troca de interface (**Aluno Online · Aplicativo · Tira-Dúvidas**) e tema. O chat abre direto na conversa; o histórico fica no menu (ou em coluna, quando há espaço).
+
+Como ver cada fluxo, escrevendo no chat:
+
+| Fluxo | O que escrever |
+|---|---|
+| Etapas da Ana e avaliação 1–5 | "Estou com dúvidas sobre faltas" |
+| Redefinição de senha | "Esqueci minha senha" (qualquer código de 6 números; 000000 simula erro) |
+| Fila → atendente → PDF, voz, imagem → encerrar → pesquisa 0–10 | "Quero falar com um atendente" e continue respondendo |
+| Fora do expediente | abra com `?expediente=fora` e peça um atendente |
+
+Roteiros ocultos (falhas, microfone, expediente, movimento reduzido): **Ctrl + .** Parâmetros: `?view=app|tira-duvidas`, `&theme=dark`, `&panel=0`, `&size=expanded`, `&expediente=fora`, `&mic=denied`, `&motion=reduce`.
+
+Foto da Ana: salve o arquivo em `src/assets/ana.png` e ela substitui o símbolo azul em todo o chat.
+
+| Verificação | Comando |
+|---|---|
+| Tipos | `npm run typecheck` |
+| Lógica (Vitest) | `npm test` |
+| Navegador (Playwright + Chrome instalado) | `npx playwright test` |
+| Contraste dos dois temas | `npm run contraste` |
+| Capturas (com o dev rodando) | `npm run capturas` |
+
+Resultados, lacunas e decisões: [templates/validacao.md](templates/validacao.md), [templates/descoberta.md](templates/descoberta.md), [templates/decisoes.md](templates/decisoes.md) e [docs/integracao.md](docs/integracao.md).
+
 ## Comece aqui
 
 1. Abra este repositório no VS Code.
@@ -37,7 +71,11 @@ Pacote de descoberta e direção para reformular **a experiência do aluno** no 
 | [references/videos/README.md](references/videos/README.md) | Vídeo oficial referenciado e plano de captura real |
 | [research/fontes.md](research/fontes.md) | Fontes, data, escopo e proveniência |
 | [fixtures/scenarios.json](fixtures/scenarios.json) | Cenários fictícios para o futuro protótipo |
-| [templates](templates) | Registros de descoberta, decisões e validação |
+| [templates](templates) | Registros de descoberta, decisões e validação (preenchidos na rodada 1) |
+| [src](src) | Protótipo: `core` (domínio + adapter mock), `ui` (núcleo único do chat), `stage` (espaço de trabalho, as três interfaces e roteiros ocultos) |
+| [tests](tests) | Testes unitários (`unit`) e de navegador (`e2e`) |
+| [docs/integracao.md](docs/integracao.md) | Mapa do protótipo para a TI: adapter, renderer, hospedeiros |
+| [captures/prototipo](captures/prototipo) | Capturas do protótipo (dados fictícios) |
 
 ## Três canais, um produto
 

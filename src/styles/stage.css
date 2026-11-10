@@ -1,0 +1,776 @@
+/* Espaço de trabalho: uma tela, logotipo e troca de interface à esquerda, o chat no palco. */
+
+.ws {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 276px minmax(0, 1fr);
+  height: 100dvh;
+  overflow: hidden;
+}
+.ws__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(143deg, transparent 0 34%, var(--stage-band) 34% 46%, transparent 46% 58%, var(--stage-band) 58% 74%, transparent 74%),
+    radial-gradient(58% 52% at 80% 4%, var(--stage-glow), transparent 72%),
+    radial-gradient(44% 44% at 4% 100%, transparent, transparent 72%),
+    var(--bg-0);
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  min-width: 0;
+  padding: 28px 16px 22px 28px;
+}
+.rail__logo {
+  display: block;
+  width: 154px;
+  height: auto;
+  filter: drop-shadow(0 8px 22px rgb(var(--shadow-rgb) / 0.6));
+}
+.rail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.rail__eyebrow {
+  margin: 0;
+  color: var(--text-3);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.rail__about p {
+  margin: 4px 0 0;
+  padding-left: 4px;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.rail__note {
+  margin: auto 0 0;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.switch__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 999px;
+  background: var(--brand-grad);
+  box-shadow:
+    0 6px 16px rgb(var(--shadow-rgb) / 0.35),
+    inset 0 1px 0 rgb(var(--tint-rgb) / 0.26);
+  transition:
+    transform 600ms var(--ease-emph),
+    width 600ms var(--ease-emph),
+    height 600ms var(--ease-emph);
+}
+.switch__btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  padding: 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-2);
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  transition:
+    color 320ms ease,
+    border-color 320ms ease;
+}
+.switch__btn::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgb(var(--accent-rgb) / 0.16);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 460ms var(--ease-out);
+}
+.switch__btn:hover,
+.switch__btn:focus-visible {
+  color: var(--text);
+  border-color: rgb(var(--accent-rgb) / 0.5);
+}
+.switch__btn:hover::before,
+.switch__btn:focus-visible::before {
+  transform: scaleX(1);
+}
+.switch__btn[aria-pressed='true'] {
+  color: #fff;
+  border-color: transparent;
+}
+.switch__btn[aria-pressed='true']::before {
+  transform: scaleX(0);
+}
+
+/* Variações do gradiente (comparação de proposta) */
+.grads {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.grads__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-2);
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  transition:
+    color 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+.grads__btn:hover,
+.grads__btn:focus-visible {
+  color: var(--text);
+  border-color: rgb(var(--accent-rgb) / 0.5);
+}
+.grads__btn[aria-pressed='true'] {
+  color: var(--text);
+  border-color: rgb(var(--accent-rgb) / 0.9);
+  background: rgb(var(--accent-rgb) / 0.14);
+}
+.grads__swatch {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25);
+}
+.grads__btn[data-grad='atual'] .grads__swatch,
+.grads__btn[data-grad='sem-logo'] .grads__swatch {
+  background: linear-gradient(180deg, #1a5ba8 55%, #fff);
+}
+.grads__btn[data-grad='alto'] .grads__swatch {
+  background: linear-gradient(180deg, #1a5ba8 22%, #fff 58%);
+}
+.grads__btn[data-grad='longo'] .grads__swatch {
+  background: linear-gradient(180deg, #1a5ba8 74%, #fff);
+}
+@media (max-width: 900px) {
+  .grads {
+    display: flex;
+    gap: 4px;
+  }
+  .grads__btn {
+    height: 30px;
+    padding: 0 8px;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .grads__swatch {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.stage {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ——— Entorno web (Aluno Online e Tira-Dúvidas) ——— */
+.browser {
+  position: absolute;
+  inset: 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--browser);
+  box-shadow: 0 30px 80px rgb(var(--shadow-rgb) / 0.45);
+  overflow: hidden;
+  transition:
+    opacity 520ms ease,
+    transform var(--t-morph) var(--ease-emph);
+}
+.browser[data-on='false'] {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+.browser__bar {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+.browser__dots {
+  display: flex;
+  gap: 7px;
+  width: 80px;
+}
+.browser__dots i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgb(var(--line-rgb) / 0.22);
+}
+.browser__address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: min(420px, 60%);
+  height: 28px;
+  margin: 0 auto;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgb(var(--line-rgb) / 0.09);
+  color: var(--text-3);
+  font-size: 13px;
+  transform: translateX(-40px);
+}
+.page {
+  position: absolute;
+  inset: 46px 0 0;
+  transition:
+    opacity 460ms ease,
+    transform 640ms var(--ease-emph);
+}
+.page[data-on='false'] {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+.page--portal {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+.page--portal i {
+  display: block;
+  border-radius: 10px;
+  background: rgb(var(--line-rgb) / 0.07);
+}
+.page__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px 24px;
+  border-right: 1px solid var(--line);
+}
+.page__nav i {
+  height: 12px;
+}
+.page__main {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 30px 34px;
+}
+.page__title {
+  width: 240px;
+  height: 26px;
+}
+.page__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.page__cards i {
+  height: 120px;
+  border-radius: 16px;
+}
+.page__block {
+  flex: 1;
+  max-height: 300px;
+  border-radius: 16px !important;
+}
+.page--td {
+  padding: 24px max(48px, calc((100% - 1040px) / 2)) 0;
+}
+.page__eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.page__h1 {
+  margin: 2px 0 4px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+.page__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.page__lead {
+  margin: 0;
+  color: var(--text-2);
+}
+.page__note {
+  margin: 0;
+  padding-top: 6px;
+  color: var(--text-3);
+  font-size: 13px;
+  text-align: right;
+}
+
+/* ——— O contêiner do chat: um elemento só, que se transforma entre as interfaces ——— */
+.shell {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: var(--w);
+  height: var(--h);
+  padding: var(--bezel);
+  border-radius: var(--r);
+  background: #04060b;
+  transform: translate(var(--x), var(--y)) scale(var(--s));
+  transform-origin: 0 0;
+  box-shadow:
+    0 0 0 1px rgb(var(--line-rgb) / 0.24),
+    0 28px 70px rgb(var(--shadow-rgb) / 0.5);
+}
+.shell[data-ready] {
+  transition:
+    transform var(--t-morph) var(--ease-emph),
+    width var(--t-morph) var(--ease-emph),
+    height var(--t-morph) var(--ease-emph),
+    padding var(--t-morph) var(--ease-emph),
+    border-radius var(--t-morph) var(--ease-emph),
+    box-shadow var(--t-morph) ease;
+}
+.shell[data-host='tira-duvidas'] {
+  box-shadow:
+    0 0 0 1px rgb(var(--line-rgb) / 0.2),
+    0 18px 50px rgb(var(--shadow-rgb) / 0.4);
+}
+/* iPhone: aro de titânio em três camadas */
+.shell[data-host='app']:not([data-small]) {
+  box-shadow:
+    0 0 0 1.5px #14171d,
+    0 0 0 4px #8c95a5,
+    0 0 0 5.5px #2b303a,
+    0 44px 90px rgb(var(--shadow-rgb) / 0.6);
+}
+.shell[data-small] {
+  box-shadow: none;
+}
+.shell[data-open='false'] {
+  box-shadow: 0 10px 26px rgb(var(--shadow-rgb) / 0.5);
+}
+
+.shell__screen {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--r) - var(--bezel));
+  background: var(--bg-1);
+  overflow: hidden;
+  transition:
+    border-radius var(--t-morph) var(--ease-emph),
+    opacity 320ms ease 160ms;
+}
+.shell[data-open='false'] .shell__screen {
+  opacity: 0;
+  transition:
+    border-radius var(--t-morph) var(--ease-emph),
+    opacity 180ms ease;
+}
+.shell__chat {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+/* Com o aparelho reduzido, sobrava uma fresta de subpixel entre o cabeçalho nativo e o chat: o chat sobe 1px por cima */
+.shell[data-host='app'] .shell__chat {
+  margin-top: -1px;
+}
+.shell[data-host='app']:not([data-small]) {
+  --safe-bottom: 16px;
+}
+
+.native {
+  flex: none;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  /* Mesmo azul do cabeçalho do aplicativo real (medido na captura): emenda com o topo do chat */
+  background: #1a5ba8;
+  color: #fff;
+  transition:
+    height var(--t-morph) var(--ease-emph),
+    opacity 420ms ease;
+}
+.shell[data-host='app'] .native {
+  height: 104px;
+  opacity: 1;
+}
+.native__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 16px 30px 0 40px;
+  font-weight: 600;
+  font-size: 16.5px;
+  letter-spacing: -0.01em;
+}
+.native__sys {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.native__nav {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+}
+.native__back {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0 2px 0 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(var(--tint-rgb) / 0.18);
+  color: #fff;
+  transition: background-color var(--t-2) ease;
+}
+.native__back:hover {
+  background: rgb(var(--tint-rgb) / 0.3);
+}
+.native__title {
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+}
+.shell[data-host='app'][data-small] .native {
+  height: 50px;
+}
+.shell[data-small] .native__status {
+  display: none;
+}
+
+.shell__island {
+  position: absolute;
+  top: calc(var(--bezel) + 11px);
+  left: 50%;
+  width: 124px;
+  height: 36px;
+  margin-left: -62px;
+  border-radius: 20px;
+  background: #000;
+  opacity: 0;
+  transform: scale(0.3);
+  pointer-events: none;
+  transition:
+    opacity 300ms ease,
+    transform 520ms var(--ease-emph);
+}
+.shell__island::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #26314a, #080b12 70%);
+}
+.shell__homebar {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  z-index: 40;
+  width: 138px;
+  height: 5px;
+  margin-left: -69px;
+  border-radius: 3px;
+  background: rgb(var(--tint-rgb) / 0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+.hw {
+  position: absolute;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #4f5665, #a9b1c0 50%, #596070);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+.hw--action {
+  left: -8px;
+  top: 122px;
+  height: 32px;
+}
+.hw--up {
+  left: -8px;
+  top: 182px;
+  height: 60px;
+}
+.hw--down {
+  left: -8px;
+  top: 256px;
+  height: 60px;
+}
+.hw--power {
+  right: -8px;
+  top: 214px;
+  height: 96px;
+}
+.shell[data-host='app']:not([data-small]) .shell__island {
+  opacity: 1;
+  transform: none;
+  transition-delay: 220ms;
+}
+.shell[data-host='app']:not([data-small]) .shell__homebar {
+  opacity: 1;
+  transition-delay: 300ms;
+}
+.shell[data-host='app']:not([data-small]) .hw {
+  opacity: 1;
+  transition-delay: 420ms;
+}
+
+.launcher {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: var(--brand-grad);
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+}
+.shell[data-open='false'] .launcher {
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 240ms;
+}
+.launcher svg {
+  transition: transform var(--t-3) var(--ease-out);
+}
+.launcher:hover svg {
+  transform: scale(1.1);
+}
+.launcher__hint {
+  position: absolute;
+  right: calc(100% + 12px);
+  bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 16px 16px 4px 16px;
+  background: #fff;
+  color: var(--anchieta-navy);
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition:
+    opacity 200ms ease,
+    transform var(--t-3) var(--ease-out);
+}
+.shell[data-open='false'] .launcher__hint {
+  opacity: 1;
+  transform: none;
+  transition-delay: 760ms;
+}
+
+/* ——— Roteiros de demonstração (ocultos; Ctrl + .) ——— */
+.palette-layer {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 220ms ease,
+    transform 320ms var(--ease-out);
+}
+.palette-layer[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+.palette {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  max-height: calc(100dvh - 40px);
+  padding: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  background: var(--drawer);
+  box-shadow: 0 24px 60px rgb(var(--shadow-rgb) / 0.6);
+  overflow-y: auto;
+  font-size: 14px;
+}
+.palette__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.palette h2 {
+  margin: 0;
+  font-size: 15px;
+}
+.palette__note {
+  margin: -6px 0 2px;
+  color: var(--text-3);
+  font-size: 12.5px;
+}
+.palette__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-2);
+  font-size: 13px;
+}
+.palette select {
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--bg-1);
+  color: var(--text);
+}
+.palette__check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.palette__check input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--anchieta-sky);
+}
+
+/* ——— Telas pequenas: o chat ocupa tudo; logotipo e troca de interface sobem para o topo ——— */
+@media (max-width: 900px) {
+  .ws {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .rail {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    padding: 8px 10px;
+  }
+  .rail__logo {
+    width: 84px;
+  }
+  .rail__body {
+    flex: 1;
+    min-width: 0;
+  }
+  .rail__eyebrow,
+  .rail__about,
+  .rail__note {
+    display: none;
+  }
+  .switch {
+    flex-direction: row;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .switch__btn {
+    height: 38px;
+    padding: 0 12px;
+    gap: 6px;
+    font-size: 13px;
+  }
+  .switch__btn svg {
+    display: none;
+  }
+  .browser {
+    display: none;
+  }
+}
+
+.rail__theme {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+.rail__logo {
+  filter: drop-shadow(0 2px 6px rgb(var(--shadow-rgb) / 0.55));
+}
+@media (max-width: 900px) {
+  .rail__theme {
+    margin: 0;
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 12.5px;
+  }
+}
+
+/* ——— Simulador de toque (interface Aplicativo no computador) ———
+   O ponteiro vira um "dedo"; arrastar rola a tela, com inércia; a roda do mouse não rola. */
+.shell[data-touch],
+.shell[data-touch] * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ccircle cx='16' cy='16' r='13' fill='rgba(20,40,80,.28)' stroke='rgba(255,255,255,.9)' stroke-width='2'/%3E%3C/svg%3E") 16 16, pointer !important;
+}
+.shell[data-touch][data-pressing],
+.shell[data-touch][data-pressing] * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ccircle cx='16' cy='16' r='10' fill='rgba(20,40,80,.5)' stroke='rgba(255,255,255,.95)' stroke-width='2'/%3E%3C/svg%3E") 16 16, pointer !important;
+}
+.shell[data-touch] .shell__screen {
+  user-select: none;
+  -webkit-user-select: none;
+}
+.shell[data-touch] input,
+.shell[data-touch] textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+.shell[data-touch] * {
+  scrollbar-width: none;
+}
+.shell[data-touch] ::-webkit-scrollbar {
+  display: none;
+}

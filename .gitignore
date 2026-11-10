@@ -8,3 +8,5 @@ captures/private/
 *.har
 *.log
 .DS_Store
+test-results/
+playwright-report/

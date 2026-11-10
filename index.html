@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0051a0" />
+    <link rel="icon" href="data:," />
+    <title>Chat Anchieta · Protótipo</title>
+    <script>
+      // Aplica o tema antes do primeiro quadro (claro é o padrão)
+      try {
+        var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('chat-anchieta-tema');
+        document.documentElement.dataset.theme = t === 'dark' ? 'dark' : 'light';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

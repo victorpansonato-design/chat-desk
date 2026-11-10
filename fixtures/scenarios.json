@@ -8,94 +8,135 @@
   },
   "agent": {
     "id": "demo-agent",
-    "displayName": "Ana",
+    "displayName": "Marina",
     "role": "Equipe de atendimento",
-    "fictional": true
+    "fictional": true,
+    "note": "Renomeado de Ana: a inspeção ao vivo mostrou que Ana é a persona da IA. Evita confundir pessoa e IA."
   },
   "scenarios": [
     {
       "id": "inicio",
       "title": "Início com conversa recente",
       "evidence": "observado",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Aluno Online/App › Início"
     },
     {
       "id": "historico",
       "title": "Lista e drawer com conversa selecionada",
       "evidence": "observado",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Aba Conversas, drawer e barra lateral"
     },
     {
       "id": "ia-texto",
       "title": "Pergunta e resposta institucional fictícia",
       "evidence": "proposto_sobre_texto_observado",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Qualquer conversa; respostas fictícias marcadas"
     },
     {
       "id": "envio-falha",
       "title": "Falha e reenvio sem duplicação",
       "evidence": "proposto",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Cenários › Próximo envio falha"
     },
     {
       "id": "resposta-atrasada",
       "title": "Resposta da conversa A com B selecionada",
       "evidence": "proposto",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Cenários › Atrasar próxima resposta; depois troque de conversa"
     },
     {
       "id": "anexo",
       "title": "Seleção, preview, cancelamento e falha",
       "evidence": "parcial_observado",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Botão anexar (seletor nativo); Cenários › Próximo upload falha"
     },
     {
       "id": "audio-negado",
       "title": "Permissão negada e alternativa texto",
       "evidence": "parcial_observado",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Cenários › Microfone: permissão negada / sem suporte"
     },
     {
       "id": "audio-local",
       "title": "Gravação, revisão e cancelamento locais",
       "evidence": "proposto",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Microfone: permissão real do navegador"
     },
     {
       "id": "humano-espera",
       "title": "Pedido, aceitação e espera sem posição/tempo",
       "evidence": "proposto_sobre_transferencia_observada",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Botão Falar com atendente (ou escreva \"falar com atendente\")"
     },
     {
       "id": "humano-ativo",
       "title": "Pessoa fictícia assume o mesmo histórico",
       "evidence": "observado_em_historico",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Cenários › Atendente entra / Mensagem do atendente"
     },
     {
       "id": "humano-indisponivel",
       "title": "Rota temporariamente indisponível",
       "evidence": "proposto",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Cenários › Rota humana: indisponível ou falha"
     },
     {
       "id": "avaliacao",
       "title": "Escala 0–10, resposta e erro",
       "evidence": "parcial_observado",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Cenários › Enviar pesquisa 0–10; Próxima avaliação 0–10 falha"
     },
     {
       "id": "encerrada",
       "title": "Somente leitura e nova conversa",
       "evidence": "observado",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Conversas antigas; Encerrar atendimento; Cenários › Encerrar pelo serviço"
     },
     {
       "id": "sessao-indisponivel",
       "title": "Falha de sessão sem operação real",
       "evidence": "proposto",
-      "implemented": false
+      "implemented": true,
+      "howToReproduce": "Cenários › Sessão › Falhar carregamento"
+    },
+    {
+      "id": "avaliacao-resposta",
+      "title": "Avaliação 1–5 por resposta da IA",
+      "evidence": "observado_ao_vivo",
+      "implemented": true,
+      "howToReproduce": "Abaixo de cada resposta da IA"
+    },
+    {
+      "id": "responder-citar",
+      "title": "Responder/citar mensagem",
+      "evidence": "visto_no_dom",
+      "implemented": true,
+      "howToReproduce": "Ação Responder na mensagem"
+    },
+    {
+      "id": "formulario",
+      "title": "Conteúdo de formulário (ponto de extensão)",
+      "evidence": "observado_so_texto",
+      "implemented": true,
+      "howToReproduce": "Conversa Recuperar acesso ao AVA"
     }
-  ]
+  ],
+  "ai": {
+    "displayName": "Ana",
+    "role": "Assistente de IA",
+    "evidence": "observado_ao_vivo_09-11-2026"
+  }
 }
