@@ -1,5 +1,7 @@
 # GitHub e Vercel · demonstração
 
+OBSERVADO · 10/11/2026: [demonstração publicada](https://chat-desk-khaki.vercel.app) no [projeto Chat Desk](https://vercel.com/victor-capitani/chat-desk). Status `READY`; página, JavaScript e CSS responderam HTTP 200. Os 23 testes de navegador passaram também na URL de produção. Os hashes dos ativos publicados coincidem com o build local validado.
+
 ## Escopo e autorização
 
 RELATADO · 10/11/2026: pedido explícito de Victor para corrigir o repositório e publicar na Vercel. Esse pedido substitui a restrição de publicação da primeira rodada. O produto continua sendo somente a experiência do aluno, com adapter mock e dados fictícios; não há backend, autenticação acadêmica ou atendimento real.
@@ -26,6 +28,8 @@ Para testar uma publicação existente, defina `BASE_URL` com a URL HTTPS e exec
 |---|---|
 | Equipe | Victor Capitani (`victor-capitani`) |
 | Repositório | `victorpansonato-design/chat-desk` |
+| Projeto Vercel | `chat-desk` (`prj_cKewtrW3m5DJdHZGTimomfiHUBJ9`) |
+| URL | `https://chat-desk-khaki.vercel.app` |
 | Branch de produção | `main` |
 | Diretório raiz | Raiz do repositório |
 | Framework | Vite |

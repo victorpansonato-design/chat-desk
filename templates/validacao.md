@@ -109,6 +109,8 @@ OBSERVADO nesta rodada:
 - Uma falha inicial de arrasto foi isolada: o teste agia antes de a gaveta terminar sua saída. A espera agora observa a remoção do diálogo; o caso passou três vezes seguidas e na suíte completa.
 - Interação adicional por agent-browser: envio de pergunta fictícia, resposta e troca de hospedeiro preservando a conversa.
 - OBSERVADO: [CI remoto aprovado em Linux](https://github.com/victorpansonato-design/chat-desk/actions/runs/42845482810), incluindo instalação limpa e os 23 cenários de navegador em Chromium.
+- OBSERVADO: deploy `READY` na [URL de produção](https://chat-desk-khaki.vercel.app), com 23/23 cenários aprovados usando `BASE_URL`. HTML, JS e CSS responderam HTTP 200; nomes dos ativos coincidem com o build local. Cabeçalhos de cache e de não indexação conferidos.
+- OBSERVADO: nenhuma exceção registrada na interação adicional por agent-browser. Consulta de erros/fatais dos últimos 30 minutos na Vercel não retornou registros; o projeto estático não tem funções nem drains de monitoramento externo.
 - Nenhuma chamada a serviço acadêmico ou backend real adicionada. Vídeo de referência local preservado e ignorado pelo Git e pelo upload da Vercel.
 
 Limites: contraste verifica os pares enumerados no script, não constitui auditoria WCAG completa. Chromium/Chrome em desktop e viewport móvel não certificam WebViews, leitores de tela ou dispositivos reais. A URL publicada deve ser verificada separadamente.

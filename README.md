@@ -6,6 +6,8 @@ Pacote de descoberta e direção para reformular **a experiência do aluno** no 
 
 ## Publicação de demonstração
 
+[Abrir o protótipo publicado](https://chat-desk-khaki.vercel.app) · [Projeto na Vercel](https://vercel.com/victor-capitani/chat-desk)
+
 RELATADO: em 10/11/2026, Victor solicitou organizar este repositório no GitHub e fazer deploy na Vercel, autorizando a publicação após a primeira rodada local. O escopo continua sendo um protótipo com dados fictícios e atendimento simulado.
 
 Configuração versionada: Node.js 24 (`.nvmrc`), instalação `npm ci`, build `npm run build`, saída `dist` e framework Vite. A branch de produção é `main`. Veja [docs/deploy.md](docs/deploy.md) para validação, publicação e recuperação.

@@ -11,5 +11,6 @@ captures/private/
 test-results/
 playwright-report/
 .vercel/
+.vite/
 # Vídeos locais de referência: revisar e sanitizar antes de qualquer publicação.
 src/ref_video/
